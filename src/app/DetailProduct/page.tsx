@@ -51,21 +51,7 @@ const ProductCards: React.FC = () => {
   };
 
 
-  // const addCart = (product: any) => {
-  //   const cart = localStorage.getItem("cart");
-  //   const updatedCart = cart? JSON.parse(cart) : [];
-  //   if (!updatedCart.some((item:any) => item._id === product._id)) {
-  //     // setCart((prevCart) => [...prevCart, product]);
-  //     const updateded = [...updatedCart,product]
-  //     localStorage.setItem("cart", JSON.stringify(updateded));
-  //     alert(`${product.title} has been added to your cart!`);
-  //   } else {
-  //     alert(`${product.title} is already in the cart.`);
-  //     console.log(product);
-      
-  //   }
-  // };
-
+ 
 
   const addCart = (product: Product) => {
     if (!cart.some(item => item._id === product._id)) {
