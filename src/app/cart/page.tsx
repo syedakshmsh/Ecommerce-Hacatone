@@ -1,12 +1,14 @@
 
 "use client";
-import React, { useEffect, useState } from "react";
+export const dynamic = "force-dynamic"; // Next.js ko prerendering error se bachane ke liye
+import React, { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Trash2 } from "lucide-react";
 import { Button } from "../components/ui/button";
+
 
 interface ICard {
   title: string;
@@ -16,12 +18,16 @@ interface ICard {
   quantity: number;
 }
 
+
 export default function CartPage() {
+
+
   const router = useRouter();
   const searchparams = useSearchParams();
   const [cartItem, setCartItem] = useState<ICard[]>([]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // Ensure code runs only in client-side
     const cart = localStorage.getItem("cart");
     console.log(cart);
 
@@ -76,6 +82,7 @@ export default function CartPage() {
   }
 
   return (
+    
     <div>
       <div className="md:h-[316px] h-auto w-auto">
         <Image
@@ -179,5 +186,6 @@ export default function CartPage() {
         </div>
       </div>
     </div>
+    
   );
 }
