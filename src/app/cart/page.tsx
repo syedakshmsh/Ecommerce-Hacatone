@@ -163,7 +163,7 @@ export default function CartPage() {
               </Card>
             ))}
           </div>
-
+           <Suspense />
           <div className="md:w-[393px] md:h-[390px] w-auto h-auto lg:mt-2 border-2 ml-4 bg-[#F9F1E7] sm:mt-2 md:mt-2 mt-8 rounded-lg ">
             <h1 className="flex justify-center mt-2">Cart Summary</h1>
             <div className="flex justify-center gap-2 pt-7 pl-7">
