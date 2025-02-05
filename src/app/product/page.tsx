@@ -1,11 +1,13 @@
 import React from 'react'
 import CartPage from '../cart/page'
-import ProductCard from './[ProductCard]/page'
+
+import ProductCards from '../DetailProduct/page'
+
 
 
 function page() {
   return (
-    <div></div>
+    <div><ProductCards /></div>
   )
 }
 
