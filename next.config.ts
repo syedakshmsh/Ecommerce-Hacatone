@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   images:{
     domains:["cdn.sanity.io"]
   },
-  experimentalconfig: {
-    missingSuspenseWithCSRBailout: false,
-  },
   
   
   };
