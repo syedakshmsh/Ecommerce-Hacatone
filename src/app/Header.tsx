@@ -8,6 +8,7 @@ import { SheetSide } from "@/app/components/sheet";
 import { Heart } from "lucide-react";
 import { FaCartShopping } from "react-icons/fa6";
 import { Search } from "lucide-react";
+import { SignedIn,UserButton,SignInButton,SignedOut } from "@clerk/nextjs";
 
 function Header() {
 
@@ -18,9 +19,11 @@ function Header() {
     <div className="md:w-full">
      
       <div className="md:w-full w-auto h-auto bg-white flex  justify-center  md:gap-60  gap-12  items-center py-4">
+      
         <div className="md:hidden">
       <SheetSide />
       </div>
+
         <div className="flex gap-2   pl-2 ">
           <Image
             src={"/Meubel House_Logos-05.png"}
@@ -29,6 +32,7 @@ function Header() {
             height={32}
           ></Image>
           <h1 className="text-2xl pt-4">Furniro</h1>
+          
         </div>
        
         <div className="flex">
@@ -48,11 +52,18 @@ function Header() {
             </li>
           </ul>
         </div>
-        <div className="flex gap-6 pt-4 ">
+        <div className="flex gap-4 pt-4 ">
+
           
         <Search />
           <Heart />
           <FaCartShopping />
+          <SignedOut>
+      <SignInButton />
+    </SignedOut>
+    <SignedIn>
+      <UserButton />
+    </SignedIn>
         
         </div>
       </div>
